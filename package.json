@@ -1,0 +1,19 @@
+{
+    "name": "env-tool",
+    "version": "1.0.0",
+    "description": "Encrypt / Decrypt .env files",
+    "main": "index.js",
+    "scripts": {
+        "encrypt": "node index --encrypt",
+        "decrypt": "node index --decrypt",
+        "build": "pkg ./index.js -o builds/env-tool --target=win,linux,mac",
+        "public": "openssl genpkey -algorithm RSA -out .keys/rsa_private.pem -pkeyopt rsa_keygen_bits:2048",
+        "private": "openssl rsa -in .keys/rsa_private.pem -pubout -out .keys/rsa_public.pem",
+        "keygen": "mkdir -p .keys && npm run public && npm run private"
+    },
+    "author": "Ashish Yadav(ashishyadav.tcet@gmail.com)",
+    "license": "ISC",
+    "devDependencies": {
+        "pkg": "^5.8.0"
+    }
+}
