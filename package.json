@@ -1,8 +1,12 @@
 {
-    "name": "env-tool",
+    "name": "envtooljs",
     "version": "1.0.0",
     "description": "Encrypt / Decrypt .env files",
     "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AshishAYadav/EnvTool.git"
+      },
     "scripts": {
         "encrypt": "node index --encrypt",
         "decrypt": "node index --decrypt",
